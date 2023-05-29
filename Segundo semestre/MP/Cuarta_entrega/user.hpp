@@ -21,20 +21,20 @@ class User {
             max_playlists = 4;
             num_saved_songs = 0;
             num_playlists = 0;
-            saved_songs = new Song*[max_saved_songs];
-            playlists = new Playlist*[max_playlists];
+            saved_songs = new Song*[max_saved_songs];//! SI NO FUNCIONA, NULL, Y EN EL MAIN SE AÑADE EL NEW CON UN PUNTERO.
+            playlists = new Playlist*[max_playlists];//! SI NO FUNCIONA, NULL, Y EN EL MAIN SE AÑADE EL NEW CON UN PUNTERO.
         }
         User(std::string name,std::string email, Date birthdate, Gender gender){ //*Constructor con parametros
-            name = "";
-            email = "";
-            birthdate = Date();
-            gender = OTHER;
+            this->name = name;
+            this->email = email;
+            this->birthdate = birthdate;
+            this->gender = gender;
             max_saved_songs = 4;
             max_playlists = 4;
             num_saved_songs = 0;
             num_playlists = 0;
-            saved_songs = new Song*[max_saved_songs];
-            playlists = new Playlist*[max_playlists];
+            saved_songs = new Song*[max_saved_songs];//! SI NO FUNCIONA, NULL, Y EN EL MAIN SE AÑADE EL NEW CON UN PUNTERO.
+            playlists = new Playlist*[max_playlists];//! SI NO FUNCIONA, NULL, Y EN EL MAIN SE AÑADE EL NEW CON UN PUNTERO.
         }
         ~User() { //*Destructor
             for (int i = 0; i < num_saved_songs; i++) {
@@ -48,6 +48,10 @@ class User {
             delete[] playlists;
         }
 
+        /**
+         * *METODO PARA AÑADIR SEGURIDAD A LAS FUNCIONES
+         * *ASI SUS PARAMETROS QUEDARIAN INACCESIBLES
+        */
         bool addSong(Song* song_to_add);
         bool addPlaylist(Playlist* playlist_to_add);
         bool deleteSong(Song* song_to_delete);
