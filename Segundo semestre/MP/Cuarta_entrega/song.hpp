@@ -15,6 +15,20 @@ class Song
         Song();
         Song(std::string title, Genre genre, int duration);
         ~Song();
+
+        /**
+         * @param Gets_Sets *
+         **/
+        std::string getTitle() { return title; }
+        void setTitle(std::string title) { this->title = title; }
+
+        Genre getGenre() { return genre; }
+        void setGenre(Genre genre) { this->genre = genre; }
+
+        int getDuration() { return duration; }
+        void setDuration(int duration) { this->duration = duration; }
+
+
 };
 
 Song::Song(){
@@ -31,6 +45,9 @@ Song::Song(std::string title, Genre genre, int duration){
 
 Song::~Song()
 {
+    /**
+     * ?DESTRUCTOR
+    */
 }
 
 #endif
