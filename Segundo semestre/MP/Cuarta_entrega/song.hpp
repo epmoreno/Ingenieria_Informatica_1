@@ -1,12 +1,12 @@
-#ifndef USER_HPP
-#define USER_HPP
+#ifndef SONG_HPP
+#define SONG_HPP
 
 #include <string>
 
 enum Genre {POP, ROCK, HIPHOP, COUNTRY, JAZZ, BLUES, ELECTRONIC, REGGAE, CLASSICAL, FOLK, METAL};
 
-class Song
-{
+class Song {
+
     private:
         std::string title;
         Genre genre;
@@ -43,11 +43,11 @@ Song::Song(std::string title, Genre genre, int duration){
     this->duration = duration;
 }
 
-Song::~Song()
-{
-    /**
-     * ?DESTRUCTOR
-    */
+/**
+ * ?DESTRUCTOR M_D
+*/
+Song::~Song() {
+    
 }
 
 #endif

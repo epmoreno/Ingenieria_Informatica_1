@@ -1,15 +1,30 @@
 #ifndef USER_HPP
 #define USER_HPP
 
-/*#include "date.hpp"
-#include "song.hpp"
-#include "playlist.hpp"*/
+/** 
+ * ?CLASES A AÑADIR?
+ * *#include "date.hpp"
+ * *#include "song.hpp"
+ * *#include "playlist.hpp"
+ **/
 #include <string>
 
 
 enum Gender {FEMALE, MALE, OTHER};
 
 class User {
+
+    private:
+        std::string name;
+        std::string email;
+        Date birthdate;
+        Gender gender;
+        int max_saved_songs;
+        int max_playlists;
+        int num_saved_songs;
+        int num_playlists;
+        Song** saved_songs;
+        Playlist** playlists;
 
     public:
         User(){ //*Constructor basico
@@ -36,7 +51,11 @@ class User {
             saved_songs = new Song*[max_saved_songs];//! SI NO FUNCIONA, NULL, Y EN EL MAIN SE AÑADE EL NEW CON UN PUNTERO.
             playlists = new Playlist*[max_playlists];//! SI NO FUNCIONA, NULL, Y EN EL MAIN SE AÑADE EL NEW CON UN PUNTERO.
         }
-        ~User() { //*Destructor
+
+        /** 
+         * ?DESTRUCTOR M_D
+        */
+        ~User() {
             for (int i = 0; i < num_saved_songs; i++) {
                 delete saved_songs[i];
             }
@@ -73,19 +92,6 @@ class User {
 
         Gender getGender(){ return gender; }
         void setGender(Gender gender){ this->gender = gender; }
-
-
-    private:
-        std::string name;
-        std::string email;
-        Date birthdate;
-        Gender gender;
-        int max_saved_songs;
-        int max_playlists;
-        int num_saved_songs;
-        int num_playlists;
-        Song** saved_songs;
-        Playlist** playlists;
 };
 
     bool User::addSong(Song* song_to_add){
