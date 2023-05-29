@@ -1,12 +1,11 @@
 #ifndef USER_HPP
 #define USER_HPP
 
-/** 
- * ?CLASES A AÑADIR?
- * *#include "date.hpp"
- * *#include "song.hpp"
- * *#include "playlist.hpp"
- **/
+
+
+#include "date.hpp"
+#include "song.hpp"
+#include "playlist.hpp"
 #include <string>
 
 
