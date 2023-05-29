@@ -1,12 +1,11 @@
 #ifndef ALBUM_HPP
 #define ALBUM_HPP
 
-/**
- * ?CLASES A AÑADIR?
- * *#include "date.hpp"
- * *#include "song.hpp"
- * *#include "artist.hpp"
- **/
+
+#include "date.hpp"
+#include "song.hpp"
+#include "artist.hpp"
+
 #include <string>
 
 class Album{
@@ -35,6 +34,9 @@ class Album{
 
         Artist* getArtist() { return artist; }
         void setArtist(Artist* artist) { this->artist = artist; }
+    /** 
+     * ! ↑↑↑ VEREMOS COMO FUNCIONA, SI NO, IMPLEMENTAMOS UN "new Artist()" ↑↑↑
+     **/
 };
 
 Album::Album(){
