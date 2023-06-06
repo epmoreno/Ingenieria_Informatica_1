@@ -180,10 +180,12 @@ class User {
     }
 
     bool User::createPlaylist(Song** songs, int num_songs, std::string title){
-        Playlist* new_playlist = new Playlist(title);//*Creamos una lista nueva de reproduccion
+        Date currentDate;
+
+        Playlist* new_playlist = new Playlist(title, this, currentDate);//*Creamos una lista nueva de reproduccion
 
         for (int i = 0; i < num_songs; i++){//*Añadimos las conciones
-            new_playlist->addSong(songs[i]);    
+            new_playlist->addSong(songs[i], this);    
         }
 
         addPlaylist(new_playlist);//*Añadimos la playlist mediante "addPlaylist"
