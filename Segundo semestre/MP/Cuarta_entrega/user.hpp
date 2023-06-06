@@ -180,7 +180,7 @@ class User {
     }
 
     bool User::createPlaylist(Song** songs, int num_songs, std::string title){
-        Date currentDate;
+        Date currentDate;//*creamos una nueva instancia de Date con la fecha actual;
 
         Playlist* new_playlist = new Playlist(title, this, currentDate);//*Creamos una lista nueva de reproduccion
 

@@ -16,7 +16,7 @@ class Playlist{
         int num_songs;
         Song** songs;
     public:
-        Playlist();
+        //Playlist();
         Playlist(std::string title, User* creator, Date creationDate);
         ~Playlist();
         bool addSong(Song* song, User* whoAddsIt);
@@ -35,24 +35,33 @@ class Playlist{
         int getNum_songs() { return num_songs; }
         void setNum_songs(int num_songs) { this->num_songs = num_songs; }
     };
-    Playlist::Playlist(){
+    /*Playlist::Playlist(){
         title = "";
         creator ->setName("");
         creationDate = Date();
         max_songs = 4;
         songs = nullptr;
-    /** 
-     * ! ↑↑↑  SI FUNCIONA, SE IMPLEMENTA EN "User.hpp" ↑↑↑
-     **/
-        songs = new Song*[max_songs]; 
+    */  
+        /** 
+         * ! ↑↑↑  SI FUNCIONA, SE IMPLEMENTA EN "User.hpp" ↑↑↑
+         **/
+    /*    songs = new Song*[max_songs]; 
         num_songs = 0;
-    }
-    Playlist::Playlist(std::string title, User* creator, Date creationDate){
+    }*/
+    /*Playlist::Playlist(std::string title, User* creator, Date creationDate){
         this->title = title;
         this->creator = creator;
         this->creationDate = creationDate;
         max_songs = 4;
         songs = nullptr;
+        songs = new Song*[max_songs]; 
+        num_songs = 0;
+    }*/
+    Playlist::Playlist(std::string title, User* creator , Date creationDate){
+        this->title = title;
+        creator -> getName();
+        this->creationDate = creationDate;
+        max_songs = 4;
         songs = new Song*[max_songs]; 
         num_songs = 0;
     }
