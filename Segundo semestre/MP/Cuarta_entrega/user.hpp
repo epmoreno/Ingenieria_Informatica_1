@@ -128,7 +128,7 @@ class User {
 
         //*Miramos si existe espacio para añadir la playlist, si no utulizaremos el mismo metodo que hay descrito previamente
         if (num_playlists == max_playlists){
-            Playlist** new_playlists = new Playlist*(max_playlists*2);
+            Playlist** new_playlists = new Playlist*(max_playlists * 2);
             for (int i = 0; i < num_playlists; i++){
                 new_playlists[i] = playlists[i];
             }
