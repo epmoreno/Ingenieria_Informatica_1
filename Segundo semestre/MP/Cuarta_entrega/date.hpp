@@ -2,6 +2,8 @@
 #define DATE_HPP
 
 #include <string>
+#include <chrono>
+#include <ctime>
 
 class Date {
 
@@ -36,10 +38,21 @@ class Date {
 };
 
 Date::Date(){
-    /**
-     * ?POR DEFECTO
-    */
+    // Obtener la fecha y hora actual
+    auto now = std::chrono::system_clock::now();
+
+    // Convertir std::chrono::system_clock::time_point a std::time_t
+    auto now_c = std::chrono::system_clock::to_time_t(now);
+
+    // Convertir std::time_t a std::tm
+    std::tm* now_tm = std::localtime(&now_c);
+
+    // Establecer los miembros de datos de la clase Date con los valores de std::tm
+    year = now_tm->tm_year + 1900;
+    month = now_tm->tm_mon + 1;
+    day = now_tm->tm_mday;
 }
+
 Date::Date(int day, int month, int year){
     this->day = day;
     this->month = month;
