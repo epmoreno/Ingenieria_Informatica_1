@@ -121,21 +121,21 @@ class User {
     bool User::addPlaylist(Playlist* playlist_to_add){
         //*Miramos si esat creada ya la playlist
         for (int i = 0; i < num_playlists; i++){
-            if (playlists[i] == playlist_to_add){
+            if ((playlists[i]) == playlist_to_add){
                 return false;
             }
         }
 
         //*Miramos si existe espacio para añadir la playlist, si no utulizaremos el mismo metodo que hay descrito previamente
         if (num_playlists == max_playlists){
-            Playlist** new_playlists = new Playlist*(max_playlists * 2);
+            Playlist** new_playlists = new Playlist*[max_playlists * 2];
             for (int i = 0; i < num_playlists; i++){
                 new_playlists[i] = playlists[i];
             }
             delete[] playlists;
             playlists = new_playlists;
             max_playlists *= 2;
-            }
+        }
         
         //*Añadimos cancion
         playlists[num_playlists] = playlist_to_add;

@@ -17,7 +17,7 @@ class Playlist{
         Song** songs;
     public:
         //Playlist();
-        Playlist(std::string title, User* creator, Date creationDate);
+        Playlist(std::string title, User* creator=nullptr, Date creationDate);
         ~Playlist();
         bool addSong(Song* song, User* whoAddsIt);
         bool deleteSong(Song* song, User* whoRemovesIt);
@@ -35,39 +35,20 @@ class Playlist{
         int getNum_songs() { return num_songs; }
         void setNum_songs(int num_songs) { this->num_songs = num_songs; }
     };
-    /*Playlist::Playlist(){
-        title = "";
-        creator ->setName("");
-        creationDate = Date();
-        max_songs = 4;
-        songs = nullptr;
-    */  
-        /** 
-         * ! ↑↑↑  SI FUNCIONA, SE IMPLEMENTA EN "User.hpp" ↑↑↑
-         **/
-    /*    songs = new Song*[max_songs]; 
-        num_songs = 0;
-    }*/
-    /*Playlist::Playlist(std::string title, User* creator, Date creationDate){
+    
+    Playlist::Playlist (std::string title, User* creator , Date creationDate){
         this->title = title;
         this->creator = creator;
+        //creator->getName();
+        //creationDate = Date();
         this->creationDate = creationDate;
         max_songs = 4;
-        songs = nullptr;
-        songs = new Song*[max_songs]; 
-        num_songs = 0;
-    }*/
-    Playlist::Playlist(std::string title, User* creator , Date creationDate){
-        this->title = title;
-        creator -> getName();
-        this->creationDate = creationDate;
-        max_songs = 4;
-        songs = new Song*[max_songs]; 
+        songs = new Song* [max_songs]; 
         num_songs = 0;
     }
 
     Playlist::~Playlist(){
-        delete creator;
+        //delete creator;
         delete[] songs;
     }
 
